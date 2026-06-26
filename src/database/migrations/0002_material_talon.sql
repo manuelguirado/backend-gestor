@@ -1,0 +1,1 @@
+ALTER TABLE `movements` ADD `type` text NOT NULL;
