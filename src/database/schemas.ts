@@ -1,4 +1,3 @@
-import { sql } from 'drizzle-orm';
 import {
   text,
   sqliteTable,
@@ -14,6 +13,7 @@ export const users = sqliteTable('users', {
 });
 export const movements = sqliteTable('movements', {
   id: integer('id').primaryKey({ autoIncrement: true }),
+  movementName: text('movementname').notNull(),
   userId: integer('user_id')
     .notNull()
     .references(() => users.id),
@@ -26,6 +26,7 @@ export const movements = sqliteTable('movements', {
 export const categories = sqliteTable('categories', {
   id: integer('id').primaryKey({ autoIncrement: true }),
   name: text('name').notNull(),
+  description: text('description'),
   userId: integer('user_id')
     .notNull()
     .references(() => users.id),

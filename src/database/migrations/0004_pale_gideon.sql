@@ -1,0 +1,1 @@
+ALTER TABLE `movements` ADD `name` text NOT NULL;
